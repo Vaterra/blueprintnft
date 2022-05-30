@@ -10,7 +10,7 @@ contract Blueprint is ERC721A, Ownable {
     
     string public baseURI = "ipfs://QmXJ3Ne3DpXeFto89uHKFtqLRnv8rsetzD9GkDLrqafPSd";
     
-    bytes32 public merkleRoot = 0x7564f23385dd92735e229a03304cce5569e2074750951935386cbde0b3a026fa;
+    bytes32 public merkleRoot = 0x1b20d913e736a72b1140594b631618663a8c05a2ecf87dcc2ab402ea116717dd;
 
     uint MAX_BLUEPRINTS = 450;
     
