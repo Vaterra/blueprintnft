@@ -60,10 +60,13 @@ contract Blueprint is ERC721A, Ownable {
     function mint() public payable{
         require(PUBLIC_STARTED, "Sale is not started");
         require(msg.value == 0.1 ether, "Mint price is 0.1 ETH");
+        require(msg.sender == tx.origin);
 
         require(totalBlueprints + 1 < MAX_BLUEPRINTS, "All blueprints have already been minted!");
+        require(!used[msg.sender],"Max per wallet (1) reached");
         _safeMint(msg.sender, 1);
 
+        used[msg.sender] = true;
         totalBlueprints++;
     }
 
